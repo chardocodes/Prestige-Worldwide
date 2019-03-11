@@ -58,7 +58,7 @@
 //select decendent 
 function getValue() {
     var selectedValue = $("dropdown-menu").value;
-    console.log(selectedValue);
+    console.log(selectedValue)
 }
 
 

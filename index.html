@@ -6,48 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travwell</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-light bg-dark" id="bar">
         <a class="navbar-brand" href="#">
             <img src="https://files.slack.com/files-pri/TFX6S1NGY-FGUF4NQ15/image.png" width="150" height="150"
                 class="d-inline-block align-top" alt="">
-
-
-
-            <button type="button" class="btn-outline-secondary"><i class="fas fa-mountain"></i> Find a National
-                Park</button>
-
-            <button type="button" class="btn-outline-secondary"><i class="fas fa-hands-helping"></i>
-                Volunteer</button>
-
-            <button type="button" class="btn-outline-secondary"><i class="fas fa-user-plus"></i> Become a
-                Member</button>
-
         </a>
+
+        <!-- <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div> -->
+        <div class="dropdown">
+            <button type="button" class="btn-outline-secondary dropButton" type="button" data-toggle="dropdown"
+                id="parksDropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mountain"></i> Find a
+                National
+                Park</button>
+            <ul class="dropdown-menu" id="parksDropdown" aria-labelledby="parksDropdown">
+                <li><a href="#" data-value="crla">Crater Lake </a></li>
+                <li><a href="#" data-value="deva">Death Valley</a></li>
+                <li><a href="#" data-value="chis">Channel Islands</a></li>
+                <li><a href="#" data-value="jotr">Joshua Tree </a></li>
+                <li><a href="#" data-value="kica">Kings Canyon</a></li>
+                <li><a href="#" data-value="lavo">Lassen Volcanic</a></li>
+                <li><a href="#" data-value="mora">Mount Rainier</a></li>
+                <li><a href="#" data-value="ncco">North Cascades</a></li>
+                <li><a href="#" data-value="olym">Olympic</a></li>
+                <li><a href="#" data-value="pinn">Pinnacles</a></li>
+                <li><a href="#" data-value="redw">Redwood</a></li>
+                <li><a href="#" data-value="sequ">Sequoia</a></li>
+                <li><a href="#" data-value="yose">Yosemite</a></li>
+
+            </ul>
+        </div>
+        <button type="button" class="btn-outline-secondary"><i class="fas fa-hands-helping"></i>
+            Volunteer</button>
+
+        <button type="button" class="btn-outline-secondary"><i class="fas fa-user-plus"></i> Become a
+            Member</button>
+
+
     </nav>
     <nav class="navbar navbar-light bg-dark" id="navBtn">
         <a class="navbar-brand" href="#">
             <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-            <i class="fas fa-camera-retro"></i>
-
-            <i class="fab fa-facebook"></i>
-
-            <i class="fab fa-twitter-square"></i>
-
-            <i class="fab fa-github-square"></i>
-
-
         </a>
+        <i class="fas fa-camera-retro"></i>
+
+        <i class="fab fa-facebook"></i>
+
+        <i class="fab fa-twitter-square"></i>
+
+        <i class="fab fa-github-square"></i>
+
     </nav>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/javascript.js"></script>
 </body>
 
 
@@ -55,46 +92,4 @@
 
 
 
-
-
-</html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="assets/style.css">
-
-</head>
-<body>
-
-<div class="container">
-  
-  <div class="myDropdown">
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle dropButton" type="button" data-toggle="dropdown">Park Names
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" id="parksDropdown" onchange="getValue();">
-      <li><a href="#" data-value="crla">Crater Lake </a></li>
-      <li><a href="#" data-value="deva">Death Valley</a></li>
-      <li><a href="#" data-value="chis">Channel Islands</a></li>
-      <li><a href="#" data-value="jotr">Joshua Tree </a></li>
-      <li><a href="#" data-value="kica">Kings Canyon</a></li>
-      <li><a href="#" data-value="lavo">Lassen Volcanic</a></li>
-      <li><a href="#" data-value="mora">Mount Rainier</a></li>
-      <li><a href="#" data-value="ncco">North Cascades</a></li>
-      <li><a href="#" data-value="olym">Olympic</a></li>
-      <li><a href="#" data-value="pinn">Pinnacles</a></li>
-      <li><a href="#" data-value="redw">Redwood</a></li>
-      <li><a href="#" data-value="sequ">Sequoia</a></li>
-      <li><a href="#" data-value="yose">Yosemite</a></li>
-     
-    </ul>
-  </div>
-  </div>
-</div>
-<script src="assets/javascript.js"></script>
-
-</body>
 </html>
