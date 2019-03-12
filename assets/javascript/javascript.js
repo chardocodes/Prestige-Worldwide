@@ -97,3 +97,4 @@ var config = {
     console.log(newEmp.role);
     console.log(newEmp.start);
     console.log(newEmp.rate);
+});
