@@ -54,23 +54,32 @@
 
 
     </nav>
-    <div class="row">
-            <div class="col-4">
-              <div class="temp"></div>
-              <div class="wind"></div>
-              <div class="humidity"></div>
-              <p id="icon"><canvas id="iconW" width="49" height="64"></canvas></p>
-              
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Sign-up Form -->
+                <form role="form">
+                    <div class="form-group row">
+                        <label for="name-input">Name:</label>
+                        <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                        <label for="email-input">Email:</label>
+                        <input class="form-control" id="email-input" type="email">
+                    </div>
+                    <div class="form-group row">
+                        <label for="age-input">Age:</label>
+                        <input class="form-control" id="age-input" type="number">
+                    </div>
+                    <div class="form-group row">
+                        <label for="comment-input">How did you hear about us?</label>
+                        <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                    </div>
+                    <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                </form>
             </div>
-             <div class="col-8">
-             
-                <script type='text/javascript'
-                  src='https://darksky.net/widget/default/42.9415,-122.0988/us12/en.js?width=100%&height=350&title=Crater Lake, OR&textColor=333333&bgColor=FFFFFF&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=333333&displaySum=no&displayHeader=yes' id="forecast"></script>
-
-        
-        
-              </div>
-            </div> 
+        </div>
+    </div>
           </div>
         
     <nav class="navbar navbar-light bg-dark" id="navBtn">

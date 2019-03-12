@@ -8,18 +8,14 @@
 // //user selects park call
 // //calls for JSON data
 // //JSON data displayed for selected park
-
-
 // //making our API call
 // $.ajax({
 //     url: queryURL,
 //     method: "GET"
 // }).then(function (response) {
 //     console.log(response);
-
 // //select children elements on click
 // //return JSON data of children clicked
-  
 // });
   $("#parksDropdown a").click(function () {
         var parks = $(this).attr("data-value");
@@ -62,25 +58,42 @@ function getValue() {
 }
 
 
-  //add value to dropdown items
-  //call API to request data per user selection
-  //user selects Park
-  //api call made
-  //information and images returned
-// var parkValue = [{"id":"chis", "name": "Channel Islands"},{ "id":"crla", "name":"Crater Lake"},{ "id":"deva", "name":"Death Valley"}, {"id":"jotr", "name": "Joshua Tree"},{"id":"kica", "name":"Kings Canyon"}, {"id":"lavo", "name": "Lassen Volcanic"},{"id":"mora", "name":"Mount Rainier"}, {"id":"ncco", "name":"North Cascades"}, "olym", "pinn", "redw", "sequ", "yose"];
-
-// for( var i = 0; i<parkValue.length; i)
-
-//1.CA    Channel Islands - chis
-// 2.OR    Crater Lake - crla
-// 3.CA    Death Valley -  deva
-// 4.CA    Joshua Tree -  jotr
-// 5.CA    Kings Canyon -  kica
-// 6.CA    Lassen Volcanic - lavo
-// 7.CA    Mount Rainier -  mora
-// 8.WA    North Cascades - ncco
-// 9.WA    Olympic - olym
-// 10.CA   Pinnacles pinn
-// 11.CA   Redwood - redw
-// 12.CA    Sequoia - sequ
-// 13.CA    Yosemite - yose
+// 1. Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBTUnBz3WmPn8YOhxJfxqJns5lSqLrrvG4",
+    authDomain: "fir-practice-300ab.firebaseapp.com",
+    databaseURL: "https://fir-practice-300ab.firebaseio.com",
+    projectId: "fir-practice-300ab",
+    storageBucket: "fir-practice-300ab.appspot.com",
+    messagingSenderId: "960973115209"
+  };
+  firebase.initializeApp(config);
+  
+  var database = firebase.database();
+  
+  // 2. Button for adding Employees
+  $("#add-member-btn").on("click", function(event) {
+    event.preventDefault();
+  
+    // Grabs user input
+    var empName = $("#employee-name-input").val().trim();
+    var empRole = $("#role-input").val().trim();
+    var empStart = moment($("#start-input").val().trim(), "MM/DD/YYYY").format("X");
+    var empRate = $("#rate-input").val().trim();
+  
+    // Creates local "temporary" object for holding employee data
+    var newEmp = {
+      name: empName,
+      role: empRole,
+      start: empStart,
+      rate: empRate
+    };
+  
+    // Uploads employee data to the database
+    database.ref().push(newEmp);
+  
+    // Logs everything to console
+    console.log(newEmp.name);
+    console.log(newEmp.role);
+    console.log(newEmp.start);
+    console.log(newEmp.rate);
