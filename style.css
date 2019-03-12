@@ -59,10 +59,11 @@
  
  .btn-outline-secondary{
      margin:55px 10px;
-     border-color: whitesmoke;
+     /* border-color: whitesmoke; */
      border-width: 3px;
      border-style: solid;
-     background-color:whitesmoke;
+     background-color:lightgrey;
+     margin-right: 160px;
  }
  #foot{
      position: absolute;
@@ -81,14 +82,16 @@
     text-align: center;
  }
  .fa-camera-retro{
-     color: whitesmoke;
+     color: lightgrey;
+     margin-left: 250px;
  }
  .fa-facebook{
-     color: whitesmoke;
+     color: lightgrey;
  }
  .fa-twitter-square{
-     color: whitesmoke;
+     color: lightgrey;
  }
  .fa-github-square{
-     color: whitesmoke;
+     color: lightgrey;
+     margin-right: 415px;
  }
