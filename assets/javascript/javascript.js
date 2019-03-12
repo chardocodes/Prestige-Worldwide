@@ -1,42 +1,41 @@
-
-
-
+//steve's weather queryURL current
 var queryURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9633edb5462c1f369f570ca99c8250df/42.8684411,-122.1684785"
-
-
-
-
-// // We then created an AJAX call
-
-
-
-
-
-
-// var parkCode = "";
-// // console.log(parkCode);
-// // Here we construct our URL
-// var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
-// // page loads
-// //user clicks drop down menu to select park
-// //user selects park call
-// //calls for JSON data
-// //JSON data displayed for selected park
-
-
-// //making our API call
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-// }).then(function (response) {
-//     console.log(response);
-
-
-// //select children elements on click
-// //return JSON data of children clicked
+//steve's variables for long and lat
 var long, lat;
-// });
 $("#parksDropdown a").click(function () {
+    var parks = $(this).attr("data-value");
+    console.log(parks);
+
+    var parkCode = parks;
+    var campsiteURL = "https://api.nps.gov/api/v1/campgrounds?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+    var parkNameURL = "https://api.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+    $.ajax({
+        url: parkNameURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        $("#natpark-name").text(response.data[0].fullName);
+
+    });
+    //making our API call
+    $.ajax({
+        url: campsiteURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        //select children elements on click
+        //return JSON data of children clicked
+        $("#campsite-name").text(response.data[0].name);
+        $("#park-view").text("•Description: " + response.data[0].description);
+        $("#total-sites").text("•Total Campsites: " + response.data[0].campsites.totalSites);
+        $("#access-view-regulations").text("•Regulations Overview: " + response.data[0].regulationsOverview);
+        $("#access-view-adainfo").text("•Wifi Information: " + response.data[0].accessibility.internetInfo);
+        $("#access-view-wifi").text("•Accessibility: " + response.data[0].accessibility.adaInfo);
+        $("#access-view-fire-stove").text("•Fire Stove Policy: " + response.data[0].accessibility.fireStovePolicy);
+        $("#access-view-rv-info").text("•RV Information: " + response.data[0].accessibility.rvInfo);
+        $("#access-view-wheelchair").text("•Wheelchair Access: " + response.data[0].accessibility.wheelchairAccess);
+    });
+
     var park = $(this).attr("data-value");
     var parks = [
         {
@@ -52,57 +51,57 @@ $("#parksDropdown a").click(function () {
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "jotr",
             lat: "33.8971",
-            long: "-115.9511" 
+            long: "-115.9511"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
         {
             name: "deva",
             lat: "36.4914",
-            long: "-117.1023" 
+            long: "-117.1023"
         },
 
     ];
@@ -117,15 +116,12 @@ $("#parksDropdown a").click(function () {
     var queryURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9633edb5462c1f369f570ca99c8250df/" + lat + "," + long;
     console.log(queryURL)
 
-
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
 
         console.log(response);
-
-
         var skycons = new Skycons({ "color": "black" });
         var icon = response.currently.icon.toUpperCase().replace(/-/g, "_");
         skycons.set("iconW", Skycons[icon]);
@@ -137,82 +133,4 @@ $("#parksDropdown a").click(function () {
     })
 
 
-    //         console.log("________________________")
-    //         console.log("long", parks[i].long)
-    //         console.log(i);
-    //         console.log("________________________")
-    //     }
-    // for (var i = 0; i < parks.length; i++) {
-    //     if(park === parks[i]) {
-    //         console.log("________________________")
-    //         console.log("long", parks[i].long)
-    //         console.log(i);
-    //         console.log("________________________")
-    //     }
-    //     else if(parks[i].name === "deva") {
-    //         console.log("________________________")
-    //         console.log("long", parks[i].long)
-    //         console.log(i);
-    //         console.log("________________________")
-    //     }
-    // }
-
-
-    //return data in a <p>
-    //return image in <img> tag.
-    //how to assign our images load 
-
-    var parkCode = "";
-    // console.log(parkCode);
-    // Here we construct our URL
-    var queryURL = "https://api.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
-    // page loads
-    //user clicks drop down menu to select park
-    //user selects park call
-    //calls for JSON data
-    //JSON data displayed for selected park
-
-
-    //making our API call
-    // $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    // }).then(function (response) {
-    //     console.log(response);
-
-    //select children elements on click
-    //return JSON data of children clicked
-
-    // });
-
-
 });
-//select decendent 
-function getValue() {
-    var selectedValue = $("dropdown-menu").value;
-    console.log(selectedValue)
-}
-
-
-  //add value to dropdown items
-  //call API to request data per user selection
-  //user selects Park
-  //api call made
-  //information and images returned
-// var parkValue = [{"id":"chis", "name": "Channel Islands"},{ "id":"crla", "name":"Crater Lake"},{ "id":"deva", "name":"Death Valley"}, {"id":"jotr", "name": "Joshua Tree"},{"id":"kica", "name":"Kings Canyon"}, {"id":"lavo", "name": "Lassen Volcanic"},{"id":"mora", "name":"Mount Rainier"}, {"id":"ncco", "name":"North Cascades"}, "olym", "pinn", "redw", "sequ", "yose"];
-
-// for( var i = 0; i<parkValue.length; i)
-
-//1.CA    Channel Islands - chis
-// 2.OR    Crater Lake - crla
-// 3.CA    Death Valley -  deva
-// 4.CA    Joshua Tree -  jotr
-// 5.CA    Kings Canyon -  kica
-// 6.CA    Lassen Volcanic - lavo
-// 7.CA    Mount Rainier -  mora
-// 8.WA    North Cascades - ncco
-// 9.WA    Olympic - olym
-// 10.CA   Pinnacles pinn
-// 11.CA   Redwood - redw
-// 12.CA    Sequoia - sequ
-// 13.CA    Yosemite - yose
