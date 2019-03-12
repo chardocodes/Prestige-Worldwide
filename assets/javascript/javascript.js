@@ -30,27 +30,43 @@
         //return image in <img> tag.
         //how to assign our images load 
  
-        var parkCode = "";
+        var parkCode = parks;
         // console.log(parkCode);
         // Here we construct our URL
-        var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+        var campsiteURL = "https://api.nps.gov/api/v1/campgrounds?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+        var parkNameURL = "https://api.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
         // page loads
         //user clicks drop down menu to select park
         //user selects park call
         //calls for JSON data
         //JSON data displayed for selected park
         
-        
-        //making our API call
+        //making our National Park Name
         $.ajax({
-            url: queryURL,
+            url:  parkNameURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-        
-        //select children elements on click
-        //return JSON data of children clicked
-          
+            $("#natpark-name").text(response.data[0].fullName);
+
+        });
+        //making our API call
+        $.ajax({
+            url:  campsiteURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            //select children elements on click
+            //return JSON data of children clicked
+            $("#campsite-name").text(response.data[0].name);
+            $("#park-view").text("•Description: " + response.data[0].description);
+            $("#total-sites").text("•Total Campsites: " + response.data[0].campsites.totalSites);
+            $("#access-view-regulations").text("•Regulations Overview: " + response.data[0].regulationsOverview);
+            $("#access-view-adainfo").text("•Wifi Information: " + response.data[0].accessibility.internetInfo);
+            $("#access-view-wifi").text("•Accessibility: " + response.data[0].accessibility.adaInfo);
+            $("#access-view-fire-stove").text("•Fire Stove Policy: " + response.data[0].accessibility.fireStovePolicy);
+            $("#access-view-rv-info").text("•RV Information: " + response.data[0].accessibility.rvInfo);
+            $("#access-view-wheelchair").text("•Wheelchair Access: " + response.data[0].accessibility.wheelchairAccess);
         });
  
  
