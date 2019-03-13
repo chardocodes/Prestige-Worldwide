@@ -18,6 +18,8 @@ $("#parksDropdown a").click(function () {
     }).then(function (response) {
         console.log(response);
         $("#natpark-name").text(response.data[0].fullName);
+        $("#natpark-photo").text(response.data[0].description);
+
     });
     
     //making our campsite API call
@@ -51,13 +53,15 @@ $("#parksDropdown a").click(function () {
             newPark.append(`
                 <ul>
                     <li><b>Description:</b> ${response.data[i].description}</li>
+                    <li><b>Directions:</b> ${response.data[i].directionsOverview}</li>
                     <li><b>Total Sites:</b> ${response.data[i].campsites.totalSites}</li>
                     <li><b>Regulations Overview:</b> ${response.data[i].regulationsOverview}</li>
+                    <li><b>Additional Information:</b> ${response.data[i].accessibility.additionalInfo}</li>
                     <li><b>Wifi Information:</b> ${response.data[i].accessibility.internetInfo}</li>
                     <li><b>Accessibility:</b> ${response.data[i].accessibility.adaInfo}</li>
+                    <li><b>Wheelchair Access:</b> ${response.data[i].accessibility.wheelchairAccess}</li>
                     <li><b>Fire Stove Policy:</b> ${response.data[i].accessibility.fireStovePolicy}</li>
                     <li><b>RV Information:</b> ${response.data[i].accessibility.rvInfo}</li>
-                    <li><b>Wheelchair Access:</b> ${response.data[i].accessibility.wheelchairAccess}</li>
                 </ul>
             `);
 
@@ -99,49 +103,49 @@ $("#parksDropdown a").click(function () {
             long: "-115.9511"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "seki",
+            lat: "36.9153",
+            long: "-118.6077"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "lavo",
+            lat: "40.4914",
+            long: "-121.4043"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "mora",
+            lat: "46.8529",
+            long: "-121.7605"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "noca",
+            lat: "48.8083",
+            long: "-121.4062"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "olym",
+            lat: "47.7865",
+            long: "-123.5361"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "pinn",
+            lat: "36.4863",
+            long: "-121.1711"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "redw",
+            lat: "41.8108",
+            long: "-124.0773"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "seki",
+            lat: "36.4958",
+            long: "-118.5599"
         },
         {
-            name: "deva",
-            lat: "36.4914",
-            long: "-117.1023"
+            name: "yose",
+            lat: "37.8405",
+            long: "119.5166"
         },
 
     ];
