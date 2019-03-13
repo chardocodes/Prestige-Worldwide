@@ -6,38 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travwell</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-light bg-dark" id="bar">
-        <a class="navbar-brand" href="#">
-            <img src="assets/images/logo_2.png" width="150" height="150" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://files.slack.com/files-pri/TFX6S1NGY-FGUF4NQ15/image.png" width="150" height="150"
+                class="d-inline-block align-top" alt="">
         </a>
         <div class="dropdown">
             <button type="button" class="btn-outline-secondary dropButton" type="button" data-toggle="dropdown"
-                id="parksDropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mountain"></i> Select a
-                National Park</button>
+                id="parksDropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mountain"></i> Find a
+                National
+                Park</button>
             <ul class="dropdown-menu" id="parksDropdown" aria-labelledby="parksDropdown">
                 <li><a href="#" data-value="crla">Crater Lake </a></li>
-                <li><a href="#" data-value="chis">Channel Islands</a></li>
                 <li><a href="#" data-value="deva">Death Valley</a></li>
+                <li><a href="#" data-value="chis">Channel Islands</a></li>
                 <li><a href="#" data-value="jotr">Joshua Tree </a></li>
-                <li><a href="#" data-value="seki">Kings Canyon</a></li>
+                <li><a href="#" data-value="kica">Kings Canyon</a></li>
                 <li><a href="#" data-value="lavo">Lassen Volcanic</a></li>
                 <li><a href="#" data-value="mora">Mount Rainier</a></li>
-                <li><a href="#" data-value="noca">North Cascades</a></li>
+                <li><a href="#" data-value="ncco">North Cascades</a></li>
                 <li><a href="#" data-value="olym">Olympic</a></li>
                 <li><a href="#" data-value="pinn">Pinnacles</a></li>
                 <li><a href="#" data-value="redw">Redwood</a></li>
-                <li><a href="#" data-value="seki">Sequoia</a></li>
+                <li><a href="#" data-value="sequ">Sequoia</a></li>
                 <li><a href="#" data-value="yose">Yosemite</a></li>
 
             </ul>
@@ -45,31 +46,39 @@
 
         <a class="btn-outline-secondary" href="sign-up-form.html"><i class="fas fa-user-plus"></i>
             Become a Member</a>
-    </nav>
 
-    <div id="home-image"><img src="assets/images/home-bg.jpg"></div>
-    <!--The Div for the campsite JSON object display JH-->
-    <div class="container park-wrapper">
+
+    </nav>
+    <div class="container">
         <div class="row">
-            <div class="col-md-8 natpark-container">
-                <p id="natpark-name" class="natpark-name"></p><br />
-            </div>
-            <div class="col-md-4 weather-api">
-                
-                <div class="temp"></div>
-                <span id="icon"><canvas id="iconW" width="49" height="64"></canvas></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" id="campsite">
-                
+            <div class="col-md-12">
+                <!-- Sign-up Form -->
+                <form role="form" class="submit-form">
+                    <div class="form-group row">
+                        <label for="name-input">Name:</label>
+                        <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                        <label for="email-input">Email:</label>
+                        <input class="form-control" id="email-input" type="email">
+                    </div>
+                    <div class="form-group row">
+                        <label for="age-input">Age:</label>
+                        <input class="form-control" id="age-input" type="number">
+                    </div>
+                    <div class="form-group row">
+                        <label for="comment-input">How did you hear about us?</label>
+                        <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                    </div>
+                    <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 
     <nav class="navbar navbar-light bg-dark" id="navBtn">
         <a class="navbar-brand" href="#">
-            <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
+            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
         </a>
         <i class="fas fa-camera-retro"></i>
 
@@ -80,6 +89,7 @@
         <i class="fab fa-github-square"></i>
 
     </nav>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
