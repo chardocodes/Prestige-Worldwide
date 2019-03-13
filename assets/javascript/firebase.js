@@ -25,4 +25,9 @@ $(".submit-form").on("submit", function (e) {
     console.log(userInput);
 
     database.ref("/users").push(userInput);
+
+    $("#name-input").val("");
+    $("#email-input").val("");
+    $("#age-input").val("");
+    $("#comment-input").val("");
 });
