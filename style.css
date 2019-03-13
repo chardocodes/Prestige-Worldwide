@@ -1,13 +1,14 @@
 /*body{
     background-image: url(http://tahoejacks.com/wp-content/uploads/2015/09/lake-tahoe-kayaking-tours.jpg);
 } */
-
+#home-image>img{
+    width:100%;
+}
 /*Jermaine's CSS for the park information START*/
 .campsite-name {
     font-size: 40px;
     width: 100%;
     margin-top: 20px;
-    height: 40px;
     padding-left: 0px;
     padding-top: 5px;
     font-family: 'Raleway', sans-serif;
@@ -18,7 +19,6 @@
     font-size: 50px;
     width: 100%;
     margin-top: 20px;
-    height: 40px;
     padding-left: 10px;
     padding-top: 5px;
     font-family: 'Roboto', sans-serif;
@@ -30,12 +30,12 @@
     
 }
 
-.natpark-container {
+/*.natpark-container {
     border-bottom-color:#222222;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-width: 80%;
-}
+} */
 
 .body-text {
     font-size: 16px;
@@ -69,7 +69,7 @@
      position: absolute;
      bottom:0;
      width: 100%;
-     height:50px;
+     /*height:50px;*/
 
  }
  #navBtn{

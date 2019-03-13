@@ -19,8 +19,7 @@
 
     <nav class="navbar navbar-light bg-dark" id="bar">
         <a class="navbar-brand" href="#">
-            <img src="https://files.slack.com/files-pri/TFX6S1NGY-FGUF4NQ15/image.png" width="150" height="150"
-                class="d-inline-block align-top" alt="">
+            <img src="assets/images/logo_2.png" width="150" height="150" class="d-inline-block align-top" alt="">
         </a>
         <div class="dropdown">
             <button type="button" class="btn-outline-secondary dropButton" type="button" data-toggle="dropdown"
@@ -48,9 +47,9 @@
 
         <button type="button" class="btn-outline-secondary"><i class="fas fa-user-plus"></i> Become a
             Member</button>
-
-
     </nav>
+
+    <div id="home-image"><img src="assets/images/home-bg.jpg"></div>
     <!--The Div for the campsite JSON object display JH-->
     <div class="container park-wrapper">
         <div class="row">
@@ -58,29 +57,21 @@
                 <p id="natpark-name" class="natpark-name"></p><br />
             </div>
             <div class="col-md-4 weather-api">
-                <p>Steve's Weather API</p>
+                
                 <div class="temp"></div>
                 <span id="icon"><canvas id="iconW" width="49" height="64"></canvas></span>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <p id="campsite-name" class="campsite-name"></p>
-                <p id="park-view" class="body-text"></p>
-                <p id="total-sites" class="body-text"></p>
-                <p id="access-view-regulations" class="body-text"></p>
-                <p id="access-view-wifi" class="body-text"></p>
-                <p id="access-view-adainfo" class="body-text"></p>
-                <p id="access-view-fire-stove" class="body-text"></p>
-                <p id="access-view-rv-info" class="body-text"></p>
-                <p id="access-view-wheelchair" class="body-text"></p>
+            <div class="col-md-12" id="campsite">
+                
             </div>
         </div>
     </div>
 
     <nav class="navbar navbar-light bg-dark" id="navBtn">
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+            <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
         </a>
         <i class="fas fa-camera-retro"></i>
 
