@@ -70,7 +70,7 @@
     <!--The Div for the campsite JSON object display JH-->
     <div class="container park-wrapper">
         <div class="row">
-            <div class="col-md-8 natpark-container">
+            <div class="col-md-8">
                 <p id="natpark-name" class="natpark-name"></p><br />
             </div>
             <div class="col-md-4 weather-api">
@@ -79,11 +79,19 @@
                 <span id="icon"><canvas id="iconW" width="49" height="64"></canvas></span>
             </div>
         </div>
+        <!--natpark photo div-->
+        <div class="row">
+            <div class="col-md-12 natpark-container" id="natpark-photo">
+            </div>
+        </div><br />
+
+        <!--campsite data div-->
         <div class="row">
             <div class="col-md-12" id="campsite">
-
             </div>
         </div>
+
+
     </div>
 
 
@@ -101,7 +109,7 @@
 
     </nav>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
