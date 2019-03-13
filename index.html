@@ -54,7 +54,7 @@
     <!--The Div for the campsite JSON object display JH-->
     <div class="container park-wrapper">
         <div class="row">
-            <div class="col-md-8 natpark-container">
+            <div class="col-md-8">
                 <p id="natpark-name" class="natpark-name"></p><br />
             </div>
             <div class="col-md-4 weather-api">
@@ -63,11 +63,19 @@
                 <span id="icon"><canvas id="iconW" width="49" height="64"></canvas></span>
             </div>
         </div>
+        <!--natpark photo div-->
+        <div class="row">
+            <div class="col-md-12 natpark-container" id="natpark-photo">
+            </div>
+        </div><br />
+
+        <!--campsite data div-->
         <div class="row">
             <div class="col-md-12" id="campsite">
-
             </div>
         </div>
+
+
     </div>
 
     <nav class="navbar navbar-light bg-dark" id="navBtn">
