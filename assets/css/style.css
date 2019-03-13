@@ -51,6 +51,10 @@
 
 /*Jermaine's CSS for the park information END*/
 
+.park-wrapper {
+
+    margin-top: 20px;
+}
 
 #bar{
     border-bottom-color:whitesmoke;
@@ -58,6 +62,52 @@
     border-bottom-style: solid;
 }
 
+ 
+ .btn-outline-secondary{
+     margin:55px 10px;
+     /* border-color: whitesmoke; */
+     border-width: 3px;
+     border-style: solid;
+     background-color:lightgrey;
+     margin-right: 160px;
+ }
+ #foot{
+     position: absolute;
+     bottom:0;
+     width: 100%;
+     /*height:50px;*/
+
+ }
+ #navBtn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-color: whitesmoke;
+    border-top-width: 5px;
+    border-top-style: solid;
+    text-align: center;
+ }
+ .fa-camera-retro{
+     color: lightgrey;
+     margin-left: 250px;
+ }
+ .fa-facebook{
+     color: lightgrey;
+ }
+ .fa-twitter-square{
+     color: lightgrey;
+ }
+ .fa-github-square{
+     color: lightgrey;
+     margin-right: 415px;
+ }
+
+ /* Steve's css*/
+ .temp { margin-left: 250px;
+    margin-top: 260px;
+}
+#icon { margin-left: 350px;
+}
  
  .btn-outline-secondary{
      margin:55px 10px;
