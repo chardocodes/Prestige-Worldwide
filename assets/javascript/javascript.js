@@ -1,128 +1,136 @@
-// 1. Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBTUnBz3WmPn8YOhxJfxqJns5lSqLrrvG4",
-    authDomain: "fir-practice-300ab.firebaseapp.com",
-    databaseURL: "https://fir-practice-300ab.firebaseio.com",
-    projectId: "fir-practice-300ab",
-    storageBucket: "fir-practice-300ab.appspot.com",
-    messagingSenderId: "960973115209"
-};
-
-firebase.initializeApp(config);
-
-var database = firebase.database();
-
-// on the form submit click
-$("#add-user").on("click", function (event) {
-    event.preventDefault();
-
-    // Get user input
-    var memberName = $("#name-input").val().trim();
-    var memberEmail = $("#email-input").val().trim();
-    var memberAge = $("#age-input").val().trim();
-    var memberComment = $("#comment-input").val().trim();
-
-    console.log(memberName);
-    console.log(memberEmail);
-    console.log(memberAge);
-    console.log(memberComment);
-
-    var newMember = {
-        name: memberName,
-        email: memberEmail,
-        age: memberAge,
-        comment: memberComment
-    }
-
-    database.ref().push(newMember);
-
-
-
-    $("#name-input").val("");
-    $("#email-input").val("");
-    $("#age-input").val("");
-    $("#comment-input").val("");
-
-
-
-    var alertSpan = $("<span>");
-    alertSpan.html("Your info has successfully been added to our database!").css("color", "white")
-    $("#bar").append(alertSpan);
-});
-// get all the data from the input fields 
-// console.log that data
-
-// var parkCode = "";
-// // console.log(parkCode);
-// // Here we construct our URL
-// var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
-// // page loads
-// //user clicks drop down menu to select park
-// //user selects park call
-// //calls for JSON data
-// //JSON data displayed for selected park
-// //making our API call
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-// }).then(function (response) {
-//     console.log(response);
-// //select children elements on click
-// //return JSON data of children clicked
-// });
+//steve's weather queryURL current
+var queryURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9633edb5462c1f369f570ca99c8250df/42.8684411,-122.1684785"
+//steve's variables for long and lat
+var long, lat;
 $("#parksDropdown a").click(function () {
     var parks = $(this).attr("data-value");
-    //create variable to store referance 
     console.log(parks);
 
-    //return data in a <p>
-    //return image in <img> tag.
-    //how to assign our images load 
+    var parkCode = parks;
+    var campsiteURL = "https://api.nps.gov/api/v1/campgrounds?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+    var parkNameURL = "https://api.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
+    $.ajax({
+        url: parkNameURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        $("#natpark-name").text(response.data[0].fullName);
 
-    var parkCode = "";
-    // console.log(parkCode);
-    // Here we construct our URL
-    var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=xcH6CocpEXTgm3xZBU7WXBoT9uwNYrg94gcV3ocX";
-    // page loads
-    //user clicks drop down menu to select park
-    //user selects park call
-    //calls for JSON data
-    //JSON data displayed for selected park
-
-
+    });
     //making our API call
+    $.ajax({
+        url: campsiteURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        //select children elements on click
+        //return JSON data of children clicked
+        $("#campsite-name").text(response.data[0].name);
+        $("#park-view").text("•Description: " + response.data[0].description);
+        $("#total-sites").text("•Total Campsites: " + response.data[0].campsites.totalSites);
+        $("#access-view-regulations").text("•Regulations Overview: " + response.data[0].regulationsOverview);
+        $("#access-view-adainfo").text("•Wifi Information: " + response.data[0].accessibility.internetInfo);
+        $("#access-view-wifi").text("•Accessibility: " + response.data[0].accessibility.adaInfo);
+        $("#access-view-fire-stove").text("•Fire Stove Policy: " + response.data[0].accessibility.fireStovePolicy);
+        $("#access-view-rv-info").text("•RV Information: " + response.data[0].accessibility.rvInfo);
+        $("#access-view-wheelchair").text("•Wheelchair Access: " + response.data[0].accessibility.wheelchairAccess);
+    });
+
+    var park = $(this).attr("data-value");
+    var parks = [
+        {
+            name: "crla",
+            lat: "42.8684411",
+            long: "-122.1684785"
+        },
+        {
+            name: "chis",
+            lat: "30.1499",
+            long: "-97.7841"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "jotr",
+            lat: "33.8971",
+            long: "-115.9511"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+        {
+            name: "deva",
+            lat: "36.4914",
+            long: "-117.1023"
+        },
+
+    ];
+    //create variable to store referance 
+    for (var i = 0; i < parks.length; i++) {
+        if (park === parks[i].name) {
+            long = parks[i].long;
+            lat = parks[i].lat;
+
+        }
+    }
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9633edb5462c1f369f570ca99c8250df/" + lat + "," + long;
+    console.log(queryURL)
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+
         console.log(response);
+        var skycons = new Skycons({ "color": "black" });
+        var icon = response.currently.icon.toUpperCase().replace(/-/g, "_");
+        skycons.set("iconW", Skycons[icon]);
+        skycons.play();
 
-        //select children elements on click
-        //return JSON data of children clicked
 
-    });
+        $(".temp").html("<h2>" + 'Currently: ' + +response.currently.temperature + ' °' + " " + response.currently.icon + "</h2>");
+
+    })
 
 
 });
-    //select decendent
-    // function getValue() {
-    //     var selectedValue = $("dropdown-menu").value;
-    //     console.log(selectedValue)
-    // }
-
-    // // Creates local "temporary" object for holding employee data
-    // var newEmp = {
-    //     name: empName,
-    //     role: empRole,
-    //     start: empStart,
-    //     rate: empRate
-    // };
-
-    // // Uploads employee data to the database
-    // database.ref().push(newEmp);
-
-    // // Logs everything to console
-    // console.log(newEmp.name);
-    // console.log(newEmp.role);
-    // console.log(newEmp.start);
-    // console.log(newEmp.rate);
