@@ -11,7 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -22,10 +22,10 @@
                 class="d-inline-block align-top" alt="">
         </a>
         <div class="dropdown">
-            <button type="button" class="btn-outline-secondary dropButton" type="button" data-toggle="dropdown"
-                id="parksDropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mountain"></i> Find a
-                National
-                Park</button>
+            <!-- <button type="button" class="btn-outline-secondary dropButton" type="button"  -->
+                    <button type="button" class="btn btn-info" data-toggle="dropdown"
+                    id="parksDropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mountain linkOne"></i> Select a
+                    National Park</button>
             <ul class="dropdown-menu" id="parksDropdown" aria-labelledby="parksDropdown">
                 <li><a href="#" data-value="crla">Crater Lake </a></li>
                 <li><a href="#" data-value="deva">Death Valley</a></li>
@@ -44,34 +44,44 @@
             </ul>
         </div>
 
-        <a class="btn-outline-secondary" href="sign-up-form.html"><i class="fas fa-user-plus"></i>
+        <a class="btn btn-info" href="sign-up-form.html"><i class="fas fa-user-plus linkTwo"></i>
             Become a Member</a>
 
 
     </nav>
-    <div class="container">
+    <div class="container formPage">
         <div class="row">
             <div class="col-md-12">
                 <!-- Sign-up Form -->
-                <form role="form" class="submit-form">
-                    <div class="form-group row">
-                        <label for="name-input">Name:</label>
-                        <input class="form-control" id="name-input" type="text" required>
+                <div class="card bg-dark text-white">
+                    <img class="card-img tentPic" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Tent Camping">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Member Sign Up</h5>
+                      <form role="form" class="submit-form">
+                        <div class="form-group row col-md-4">
+                            <label for="name-input">Name:</label>
+                            <input class="form-control" id="name-input" type="text" required>
+                        </div>
+                        <div class="form-group row col-md-4">
+                            <label for="email-input">Email:</label>
+                            <input class="form-control" id="email-input" type="email" required>
+                        </div>
+                        <div class="form-group row col-md-4">
+                            <label for="age-input">Age:</label>
+                            <input class="form-control" id="age-input" type="number" required>
+                        </div>
+                        <div class="form-group row col-md-4">
+                                <label for="age-input">Favorite place to camp:</label>
+                                <input class="form-control" id="comment-input" rows="2" required>
+                            </div>
+                        <div class="form-group row col-md-4">
+                            <label for="comment-input">How did you hear about us?</label>
+                            <textarea class="form-control" id="comment-input" rows="5" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="add-user" type="submit">Submit</button>
+                    </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="email-input">Email:</label>
-                        <input class="form-control" id="email-input" type="email" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="age-input">Age:</label>
-                        <input class="form-control" id="age-input" type="number" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="comment-input">How did you hear about us?</label>
-                        <textarea class="form-control" id="comment-input" rows="5" required></textarea>
-                    </div>
-                    <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-                </form>
+                  </div>
             </div>
         </div>
     </div>
